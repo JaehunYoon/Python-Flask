@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Binding Example in Flask</title>
+</head>
+<body>
+    <h1>Data Binding is so so funny~</h1>
+    <hr>
+    {% if not example %}
+        <p>Plz input value..</p>
+    {% else %}
+        <p>Input value is {{ example }}</p>
+    {% endif %}
+</body>
+</html>
