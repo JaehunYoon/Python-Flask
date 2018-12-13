@@ -10,6 +10,11 @@ def main():
     return "<h1>h4lo~~</h1>"
 
 
+@app.route("/red")
+def red():
+    return redirect(url_for('hello'))
+
+
 @app.route("/hello")
 def hello():
     return render_template("hello.html")
@@ -26,7 +31,7 @@ def input_value(example):
 
 
 if __name__ == "__main__":
-    app.run("127.0.0.1", 8765, debug=True)
+    app.run("127.0.0.1", 8787, debug=True)
     # auto get hostname
     # app.run(socket.gethostbyname(socket.gethostname()), 80, debug=False)
     # 배포 시에는 debug를 False로 해두자
