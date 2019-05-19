@@ -31,7 +31,7 @@ def input_value(example):
 
 
 if __name__ == "__main__":
-    app.run("127.0.0.1", 8787, debug=True)
+    # app.run("127.0.0.1", 8787, debug=True)
     # auto get hostname
-    # app.run(socket.gethostbyname(socket.gethostname()), 80, debug=False)
+    app.run(socket.gethostbyname(socket.gethostname()), 8230, debug=False)
     # 배포 시에는 debug를 False로 해두자
