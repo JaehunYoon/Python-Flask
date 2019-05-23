@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <input id="user" type="text" placeholder="이름">
+    <input id="phone" type="text" placeholder="전화번호">
+    <button id="btn" onclick="addNewPhone();">등록</button>
+
+    <div id="phonebook">
+       <p>맹꽁이</p>
+       <p>010-1234-5678</p>
+    </div>
+    <script>
+        function addNewPhone() {
+            let userValue = document.getElementById("user").value
+            let phoneValue = document.getElementById("phone").value
+
+            axios.get("http://127.0.0.1:8765/phone", {
+                params: {
+                    user: userValue,
+                    phone: phoneValue
+                }
+            })
+            .then(res => {
+                let temp = document.getElementById("phonebook");
+                temp.innerHTML += `<p>${res.data.user}</p>\n<p>${res.data.phone}</p>`;
+            })
+        }
+    </script>
+</body>
+</html>
